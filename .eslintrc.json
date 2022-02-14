@@ -3,16 +3,23 @@
         "browser": true,
         "es2021": true
     },
+    "parser": "babel-eslint",
+    "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": false,
+    "ecmaFeatures": {
+      "globalReturn": false,
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "babelOptions": {
+      "configFile": "path/to/config.js"
+    }
+  },
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended"
     ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": "latest"
-    },
     "plugins": [
         "react"
     ],
