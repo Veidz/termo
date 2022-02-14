@@ -1,10 +1,10 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "parser": "babel-eslint",
-    "parserOptions": {
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
     "sourceType": "module",
     "allowImportExportEverywhere": false,
     "ecmaFeatures": {
@@ -16,13 +16,7 @@
       "configFile": "path/to/config.js"
     }
   },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended"
-    ],
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-    }
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "plugins": ["react"],
+  "rules": {}
 }
