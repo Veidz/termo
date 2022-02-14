@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "eslint-config-airbnb": "^19.0.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1"
@@ -15,6 +16,8 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",
     "autoprefixer": "^10.4.2",
+    "eslint": "^8.9.0",
+    "eslint-plugin-react": "^7.28.0",
     "postcss": "^8.4.6",
     "tailwindcss": "^3.0.22",
     "vite": "^2.8.0"
