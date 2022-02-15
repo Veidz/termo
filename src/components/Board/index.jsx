@@ -1,56 +1,55 @@
 import React from 'react';
-import style from '../../styles';
+import style from '../../style';
 
 const { input } = style;
 
-const gameBoard = [
-  ['', '', '', '', ''],
-  ['', '', '', '', ''],
-  ['', '', '', '', ''],
-  ['', '', '', '', ''],
-  ['', '', '', '', ''],
-  ['', '', '', '', ''],
-]
+// const gameBoard = [
+//   ['', '', '', '', ''],
+//   ['', '', '', '', ''],
+//   ['', '', '', '', ''],
+//   ['', '', '', '', ''],
+//   ['', '', '', '', ''],
+//   ['', '', '', '', ''],
+// ];
 
-const correctAnswer = "hello";
+// const correctAnswer = 'hello';
 
 function Board() {
-
-  const handleChange = (index) => {
-    console.log(index);
-  }
+  const handleChange = (selectedPosition) => {
+    console.log(selectedPosition);
+  };
 
   return (
     <div className="grid grid-cols-5">
       {/* First Row */}
       <input
-        className={ input }
+        className={input}
         type="text"
-        onChange={ () => handleChange(0) }
+        onChange={() => handleChange(0)}
         maxLength="1"
       />
       <input
-        className={ input }
+        className={input}
         type="text"
-        onChange={ () => handleChange(1) }
+        onChange={() => handleChange(1)}
         maxLength="1"
       />
       <input
-        className={ input }
+        className={input}
         type="text"
-        onChange={ () => handleChange(2) }
+        onChange={() => handleChange(2)}
         maxLength="1"
       />
       <input
-        className={ input }
+        className={input}
         type="text"
-        onChange={ () => handleChange(3) }
+        onChange={() => handleChange(3)}
         maxLength="1"
       />
       <input
-        className={ input }
+        className={input}
         type="text"
-        onChange={ () => handleChange(4) }
+        onChange={() => handleChange(4)}
         maxLength="1"
       />
     </div>
