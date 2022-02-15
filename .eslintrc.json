@@ -1,22 +1,22 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "sourceType": "module",
-    "allowImportExportEverywhere": false,
-    "ecmaFeatures": {
-      "globalReturn": false,
-      "jsx": true
+    "env": {
+        "browser": true,
+        "es2021": true
     },
-    "ecmaVersion": "latest",
-    "babelOptions": {
-      "configFile": "path/to/config.js"
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
     }
-  },
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "plugins": ["react"],
-  "rules": {}
 }
