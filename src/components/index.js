@@ -3,4 +3,6 @@ import BoardRow from './BoardRow';
 import Keyboard from './Keyboard';
 import SubmitButton from './SubmitButton';
 
-export { Board, BoardRow, Keyboard, SubmitButton };
+export {
+  Board, BoardRow, Keyboard, SubmitButton,
+};
