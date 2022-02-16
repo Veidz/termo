@@ -8,6 +8,9 @@ function TermoProvider({ children }) {
 
   const [colorIndex, setColorIndex] = useState();
 
+  const [inputsRender, setInputsRender] = useState([0, 0, 0, 0, 0, 0]);
+  const [userInputs, setUserInputs] = useState([]);
+
   // #3aa394 => letra certa/posicao certa (58, 163, 148)
   // #d3ad69 => letra certa/posicao errada (211, 173, 105)
   // #312a2c => letra errada (49, 42, 44)
@@ -19,7 +22,14 @@ function TermoProvider({ children }) {
     // Estritamente certo
     if (correctAnswer === playerAnswerString) {
       // Jogador acertou tudo
-      // console.log('acertou tudo!');
+      if (inputsRender.length) {
+        inputsRender.pop();
+        setInputsRender(inputsRender);
+      }
+
+      if (userInputs.length <= 5) {
+        setUserInputs((oldCounter) => [...oldCounter, 0]);
+      }
     } else if (correctAnswer !== playerAnswerString) {
       const answerVerify = playerAnswer.map((letter, index) => {
         if (correctAnswerArray.includes(letter)) {
@@ -46,7 +56,12 @@ function TermoProvider({ children }) {
     setPlayerAnswer,
     handleAnswer,
     colorIndex,
-  }), [correctAnswer, setCorrectAnswer, playerAnswer, setPlayerAnswer, handleAnswer, colorIndex]);
+    inputsRender,
+    userInputs,
+  }), [
+    correctAnswer, setCorrectAnswer, playerAnswer, setPlayerAnswer,
+    handleAnswer, colorIndex, inputsRender, userInputs,
+  ]);
 
   return (
     <TermoContext.Provider value={value}>
