@@ -1,21 +1,18 @@
 import React from 'react';
-import { Board } from './components';
+import { Board, SubmitButton } from './components';
+import TermoProvider from './context/TermoProvider';
 import style from './style';
 
-const { button, containerCenter } = style;
+const { containerCenter } = style;
 
 function App() {
   return (
-    <div className={containerCenter}>
-      <Board />
-
-      <button
-        type="button"
-        className={button}
-      >
-        Try
-      </button>
-    </div>
+    <TermoProvider>
+      <div className={containerCenter}>
+        <Board />
+        <SubmitButton />
+      </div>
+    </TermoProvider>
   );
 }
 

@@ -1,7 +1,7 @@
-import React from 'react';
-import style from '../../style';
+import React, { useContext } from 'react';
+import TermoContext from '../../context/TermoContext';
+import BoardRow from '../BoardRow';
 
-const { input } = style;
 
 // const gameBoard = [
 //   ['', '', '', '', ''],
@@ -15,43 +15,26 @@ const { input } = style;
 // const correctAnswer = 'hello';
 
 function Board() {
-  const handleChange = (selectedPosition) => {
-    console.log(selectedPosition);
+  const {
+    correctAnswer, setCorrectAnswer,
+    playerAnswer, setPlayerAnswer,
+  } = useContext(TermoContext);
+
+  const handleChange = (selectedPosition, { target }) => {
+    const { value } = target;
+
+    const playerPosition = playerAnswer.map((el, index) => (
+      index === selectedPosition ? value : el
+    ));
+
+    setPlayerAnswer(playerPosition);
   };
+  
 
   return (
     <div className="grid grid-cols-5">
       {/* First Row */}
-      <input
-        className={input}
-        type="text"
-        onChange={() => handleChange(0)}
-        maxLength="1"
-      />
-      <input
-        className={input}
-        type="text"
-        onChange={() => handleChange(1)}
-        maxLength="1"
-      />
-      <input
-        className={input}
-        type="text"
-        onChange={() => handleChange(2)}
-        maxLength="1"
-      />
-      <input
-        className={input}
-        type="text"
-        onChange={() => handleChange(3)}
-        maxLength="1"
-      />
-      <input
-        className={input}
-        type="text"
-        onChange={() => handleChange(4)}
-        maxLength="1"
-      />
+      <BoardRow handleChange={ handleChange } />
     </div>
   );
 }
