@@ -39,22 +39,15 @@ function TermoProvider({ children }) {
     }
   };
 
-  const value = {
+  const value = useMemo(() => ({
     correctAnswer,
     setCorrectAnswer,
     playerAnswer,
     setPlayerAnswer,
     handleAnswer,
     colorIndex,
-  }
-  // const value = useMemo(() => ({
-  //   correctAnswer,
-  //   setCorrectAnswer,
-  //   playerAnswer,
-  //   setPlayerAnswer,
-  //   handleAnswer,
-  //   colorIndex,
-  // }), []);
+  }), [correctAnswer, setCorrectAnswer, playerAnswer, setPlayerAnswer, handleAnswer, colorIndex]);
+
   return (
     <TermoContext.Provider value={value}>
       { children }
