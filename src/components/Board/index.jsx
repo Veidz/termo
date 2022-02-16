@@ -15,10 +15,7 @@ import BoardRow from '../BoardRow';
 // const correctAnswer = 'hello';
 
 function Board() {
-  const {
-    correctAnswer, setCorrectAnswer,
-    playerAnswer, setPlayerAnswer,
-  } = useContext(TermoContext);
+  const { playerAnswer, setPlayerAnswer } = useContext(TermoContext);
 
   const handleChange = (selectedPosition, { target }) => {
     const { value } = target;

@@ -7,9 +7,9 @@ function TermoProvider({ children }) {
 
   const [colorIndex, setColorIndex] = useState([]);
 
-  // #3aa394 => letra certa/posicao certa
-  // #d3ad69 => letra certa/posicao errada
-  // #312a2c => letra errada
+  // #3aa394 => letra certa/posicao certa (58, 163, 148)
+  // #d3ad69 => letra certa/posicao errada (211, 173, 105)
+  // #312a2c => letra errada (49, 42, 44)
 
   const handleAnswer = () => {
     const correctAnswerArray = correctAnswer.split('');
@@ -25,15 +25,15 @@ function TermoProvider({ children }) {
 
           if (correctAnswerArray[index] === letter) {
             // Letra certa e posicao certa
-            return '#3aa394';
+            return '3aa394';
           }
 
           if (correctAnswerArray[index] !== letter) {
             // Letra certa e posicao errada
-            return '#d3ad69';
+            return 'd3ad69';
           }
         }
-        return '#312a2c';
+        return '312a2c';
       })
       setColorIndex(answerVerify);
     }  
@@ -45,6 +45,7 @@ function TermoProvider({ children }) {
     playerAnswer,
     setPlayerAnswer,
     handleAnswer,
+    colorIndex,
   }
 
   return (
