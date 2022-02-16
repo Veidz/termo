@@ -25,15 +25,15 @@ function TermoProvider({ children }) {
 
           if (correctAnswerArray[index] === letter) {
             // Letra certa e posicao certa
-            return '3aa394';
+            return 'bg-teal-600';
           }
 
           if (correctAnswerArray[index] !== letter) {
             // Letra certa e posicao errada
-            return 'd3ad69';
+            return 'bg-yellow-500';
           }
         }
-        return '312a2c';
+        return 'bg-stone-900';
       })
       setColorIndex(answerVerify);
     }  

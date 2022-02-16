@@ -11,31 +11,31 @@ function BoardRow({ handleChange }) {
   return (
     <>
       <input
-        className={`${input} bg-[#${colorIndex[0]}]`}
+        className={`${input} ${colorIndex[0]}`}
         type="text"
         onChange={(event) => handleChange(0, event)}
         maxLength="1"
       />
         <input
-        className={`${input} bg-[${colorIndex[1]}]`}
+        className={`${input} ${colorIndex[1]}`}
         type="text"
         onChange={(event) => handleChange(1, event)}
         maxLength="1"
       />
       <input
-        className={`${input} bg-[${colorIndex[2]}]`}
+        className={`${input} ${colorIndex[2]}`}
         type="text"
         onChange={(event) => handleChange(2, event)}
         maxLength="1"
       />
       <input
-        className={`${input} bg-[${colorIndex[3]}]`}
+        className={`${input} ${colorIndex[3]}`}
         type="text"
         onChange={(event) => handleChange(3, event)}
         maxLength="1"
       />
       <input
-        className={`${input} bg-[${colorIndex[4]}]`}
+        className={`${input} ${colorIndex[4]}`}
         type="text"
         onChange={(event) => handleChange(4, event)}
         maxLength="1"
