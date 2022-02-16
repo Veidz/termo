@@ -31,6 +31,14 @@ function TermoProvider({ children }) {
         setUserInputs((oldCounter) => [...oldCounter, 0]);
       }
     } else if (correctAnswer !== playerAnswerString) {
+      if (inputsRender.length) {
+        inputsRender.pop();
+        setInputsRender(inputsRender);
+      }
+
+      if (userInputs.length <= 5) {
+        setUserInputs((oldCounter) => [...oldCounter, 0]);
+      }
       const answerVerify = playerAnswer.map((letter, index) => {
         if (correctAnswerArray.includes(letter)) {
           if (correctAnswerArray[index] === letter) {

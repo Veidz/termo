@@ -8,33 +8,33 @@ function BoardRow({ handleChange }) {
   return (
     <>
       <input
-        className={`${input}`}
+        className={ `${input}` }
         type="text"
-        onChange={(event) => handleChange(0, event)}
+        onChange={ (event) => handleChange(0, event) }
         maxLength="1"
       />
       <input
-        className={`${input}`}
+        className={ `${input}` }
         type="text"
-        onChange={(event) => handleChange(1, event)}
+        onChange={ (event) => handleChange(1, event) }
         maxLength="1"
       />
       <input
-        className={`${input}`}
+        className={ `${input}` }
         type="text"
-        onChange={(event) => handleChange(2, event)}
+        onChange={ (event) => handleChange(2, event) }
         maxLength="1"
       />
       <input
-        className={`${input}`}
+        className={ `${input}` }
         type="text"
-        onChange={(event) => handleChange(3, event)}
+        onChange={ (event) => handleChange(3, event) }
         maxLength="1"
       />
       <input
-        className={`${input}`}
+        className={ `${input}` }
         type="text"
-        onChange={(event) => handleChange(4, event)}
+        onChange={ (event) => handleChange(4, event) }
         maxLength="1"
       />
     </>
