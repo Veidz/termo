@@ -32,20 +32,28 @@ function Board() {
     setPlayerAnswer(playerPosition);
   };
 
+  const randomIndex = () => Math.floor(Math.random() * 1000000);
+
   return (
     <div className="grid grid-cols-5">
       {/* First Row */}
-      {colorIndex && (
-        colorIndex.map((el) => (
-          <input className={ `${input} ${el[1]}` } value={ el[0] } />
-        ))
-      )}
-      <BoardRow handleChange={ handleChange } />
-      <BoardRow handleChange={ handleChange } />
-      <BoardRow handleChange={ handleChange } />
-      <BoardRow handleChange={ handleChange } />
-      <BoardRow handleChange={ handleChange } />
-      <BoardRow handleChange={ handleChange } />
+      {
+        colorIndex && userInputs && (
+          colorIndex.map((el) => (
+            <input className={ `${input} ${el[1]}` } value={ el[0] } />
+          ))
+        )
+      }
+      {
+        inputsRender && (
+          inputsRender.map(() => (
+            <div key={ randomIndex() }>
+              <BoardRow handleChange={ handleChange } />
+            </div>
+          ))
+        )
+      }
+      {/* <BoardRow handleChange={ handleChange } /> */}
     </div>
   );
 }
