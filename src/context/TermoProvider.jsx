@@ -64,7 +64,7 @@ function TermoProvider({ children }) {
   ]);
 
   return (
-    <TermoContext.Provider value={value}>
+    <TermoContext.Provider value={ value }>
       { children }
     </TermoContext.Provider>
   );
