@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 import TermoContext from '../../context/TermoContext';
 import style from '../../style';
 
@@ -15,7 +15,7 @@ function SubmitButton() {
     >
       Submit
     </button>
-  )
+  );
 }
 
 export default SubmitButton;
