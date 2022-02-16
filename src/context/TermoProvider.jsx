@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react';
+import PropTypes from 'prop-types';
 import TermoContext from './TermoContext';
 
 function TermoProvider({ children }) {
   const [correctAnswer, setCorrectAnswer] = useState('hello');
   const [playerAnswer, setPlayerAnswer] = useState(['', '', '', '', '']);
 
-  const [colorIndex, setColorIndex] = useState([]);
+  const [colorIndex, setColorIndex] = useState();
 
   // #3aa394 => letra certa/posicao certa (58, 163, 148)
   // #d3ad69 => letra certa/posicao errada (211, 173, 105)
@@ -18,25 +19,24 @@ function TermoProvider({ children }) {
     // Estritamente certo
     if (correctAnswer === playerAnswerString) {
       // Jogador acertou tudo
-      console.log('acertou tudo!')
+      // console.log('acertou tudo!');
     } else if (correctAnswer !== playerAnswerString) {
       const answerVerify = playerAnswer.map((letter, index) => {
         if (correctAnswerArray.includes(letter)) {
-
           if (correctAnswerArray[index] === letter) {
             // Letra certa e posicao certa
-            return 'bg-teal-600';
+            return [letter, 'bg-teal-600'];
           }
 
           if (correctAnswerArray[index] !== letter) {
             // Letra certa e posicao errada
-            return 'bg-yellow-500';
+            return [letter, 'bg-yellow-500'];
           }
         }
-        return 'bg-stone-900';
-      })
+        return [letter, 'bg-stone-900'];
+      });
       setColorIndex(answerVerify);
-    }  
+    }
   };
 
   const value = {
@@ -47,12 +47,23 @@ function TermoProvider({ children }) {
     handleAnswer,
     colorIndex,
   }
-
+  // const value = useMemo(() => ({
+  //   correctAnswer,
+  //   setCorrectAnswer,
+  //   playerAnswer,
+  //   setPlayerAnswer,
+  //   handleAnswer,
+  //   colorIndex,
+  // }), []);
   return (
-    <TermoContext.Provider value={ value }>
+    <TermoContext.Provider value={value}>
       { children }
     </TermoContext.Provider>
-  )
+  );
 }
+
+TermoProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default TermoProvider;
