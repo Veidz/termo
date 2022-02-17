@@ -1,16 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import style from '../../style';
-// import TermoContext from '../../context/TermoContext';
 
 const { input } = style;
 
 function BoardRow({ props }) {
   const { handleChange, disabled, color } = props;
-  console.log(color[0]);
 
-  // const { colorIndex } = useContext(TermoContext);
-  // console.log(colorIndex);
   return (
     <>
       <input

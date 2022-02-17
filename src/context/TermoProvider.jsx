@@ -48,6 +48,8 @@ function TermoProvider({ children }) {
       if (currentRow === 4) setColorRow4(answerVerify);
       if (currentRow === 5) setColorRow5(answerVerify);
       if (currentRow === 6) setColorRow6(answerVerify);
+
+      setCurrentRow(42);
     } else if (correctAnswer !== playerAnswerString) {
       if (inputsRender.length) {
         inputsRender.pop();

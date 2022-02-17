@@ -1,20 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import TermoContext from '../../context/TermoContext';
 import BoardRow from '../BoardRow';
-// import style from '../../style';
-
-// const { input } = style;
-
-// const gameBoard = [
-//   ['', '', '', '', ''],
-//   ['', '', '', '', ''],
-//   ['', '', '', '', ''],
-//   ['', '', '', '', ''],
-//   ['', '', '', '', ''],
-//   ['', '', '', '', ''],
-// ];
-
-// const correctAnswer = 'hello';
 
 function Board() {
   const {
