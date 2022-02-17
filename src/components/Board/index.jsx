@@ -22,12 +22,6 @@ function Board() {
     colorRow1, colorRow2, colorRow3, colorRow4, colorRow5, colorRow6,
   } = useContext(TermoContext);
 
-  console.log(colorRow1);
-  console.log(colorRow2);
-  console.log(colorRow3);
-  console.log(colorRow4);
-  console.log(colorRow5);
-
   const handleChange = (selectedPosition, { target }) => {
     const { value } = target;
 
@@ -41,37 +35,37 @@ function Board() {
   const boardRow1 = {
     handleChange,
     disabled: currentRow !== 1,
-    color: colorRow1 && colorRow1,
+    color: colorRow1,
   };
 
   const boardRow2 = {
     handleChange,
     disabled: currentRow !== 2,
-    color: colorRow2 && colorRow2,
+    color: colorRow2,
   };
 
   const boardRow3 = {
     handleChange,
     disabled: currentRow !== 3,
-    color: colorRow3 && colorRow3,
+    color: colorRow3,
   };
 
   const boardRow4 = {
     handleChange,
     disabled: currentRow !== 4,
-    color: colorRow4 && colorRow4,
+    color: colorRow4,
   };
 
   const boardRow5 = {
     handleChange,
     disabled: currentRow !== 5,
-    color: colorRow5 && colorRow5,
+    color: colorRow5,
   };
 
   const boardRow6 = {
     handleChange,
     disabled: currentRow !== 6,
-    color: colorRow6 && colorRow6,
+    color: colorRow6,
   };
 
   return (

@@ -7,42 +7,42 @@ const { input } = style;
 
 function BoardRow({ props }) {
   const { handleChange, disabled, color } = props;
-  // console.log(color[0][1]);
+  console.log(color[0]);
 
   // const { colorIndex } = useContext(TermoContext);
   // console.log(colorIndex);
   return (
     <>
       <input
-        // className={ `${input} ${color[0][1]}` }
+        className={ color.length ? `${input} ${color[0][1]}` : `${input}` }
         type="text"
         onChange={ (event) => handleChange(0, event) }
         maxLength="1"
         disabled={ disabled }
       />
       <input
-        // className={ color ? `${input} ${color[1][1]}` : `${input}` }
+        className={ color.length ? `${input} ${color[1][1]}` : `${input}` }
         type="text"
         onChange={ (event) => handleChange(1, event) }
         maxLength="1"
         disabled={ disabled }
       />
       <input
-        // className={ color ? `${input} ${color[2][1]}` : `${input}` }
+        className={ color.length ? `${input} ${color[2][1]}` : `${input}` }
         type="text"
         onChange={ (event) => handleChange(2, event) }
         maxLength="1"
         disabled={ disabled }
       />
       <input
-        // className={ color ? `${input} ${color[3][1]}` : `${input}` }
+        className={ color.length ? `${input} ${color[3][1]}` : `${input}` }
         type="text"
         onChange={ (event) => handleChange(3, event) }
         maxLength="1"
         disabled={ disabled }
       />
       <input
-        // className={ color ? `${input} ${color[4][1]}` : `${input}` }
+        className={ color.length ? `${input} ${color[4][1]}` : `${input}` }
         type="text"
         onChange={ (event) => handleChange(4, event) }
         maxLength="1"
